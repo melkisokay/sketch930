@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Untitled</title>
+    <title>sketch 3</title>
     <style>
-      #ball {
-        border-radius: 50%;
-        height: 120px;
-        width: 120px;
+      #apple {
+        border-radius: 50% ;
+        height: 200px;
+        width: 200px;
         position: absolute;
-        background: magenta;
+        background-image: url("apple.jpeg");
+        /*makes the image fit into the shape*/
+        background-position: center;
+        background-size: cover;
         box-shadow: 12px 10px;
-        color: #9E0B8F
+        color: #b6bb95
+          
       }
+      body {
+      background-image: url("apple.jpg")     }
     </style>
   </head>
   <body>
-    <div id="ball">
+    <div id="apple">
     </div>
     <script>
-      let nameObj = "Ball" ///string global var
+      let nameObj = "apple" ///string global var
       let speed = 1; ////number global var
       let moving = true; //boolean global var
 
@@ -27,7 +33,7 @@
       let dx = speed;
       let dy = speed;
 
-      function moveBall () {
+      function moveApple () {
         if (moving) {
           x += dx;
           y += dy;
@@ -40,8 +46,8 @@
             dy = -dy;
           }
 
-          ball.style.left = x + "px"
-          ball.style.top = y + "px"
+          apple.style.left = x + "px"
+          apple.style.top = y + "px"
         }
 
       }
@@ -50,7 +56,7 @@
         console.log(nameObj, speed, moving);
       }
       showInfo();
-      setInterval(moveBall, 20);
+      setInterval(moveApple, 20);
     </script>
   </body>
 </html>
